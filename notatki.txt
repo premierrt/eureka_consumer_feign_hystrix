@@ -3,4 +3,10 @@ konsumuje zarejstrowane w eurece boot_eureka_Client
 https://www.baeldung.com/spring-cloud-netflix-eureka
 https://www.baeldung.com/spring-cloud-netflix-hystrix
 
-to do hystrix
+
+to do hystrix:
+https://codecouple.pl/2017/11/24/23-spring-boot-hystrix/
+
+
+dodac zuul:
+https://www.baeldung.com/zuul-load-balancing
