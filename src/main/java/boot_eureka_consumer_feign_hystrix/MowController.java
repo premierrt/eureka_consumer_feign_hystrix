@@ -29,6 +29,19 @@ public class MowController {
 		return przykladowyKlientMS.mow();
 	}
 	
+	
+	@HystrixCommand(fallbackMethod="metodaFallback",
+			 commandProperties = {
+					    @HystrixProperty(name = "circuitBreaker.sleepWindowInMilliseconds", value = "20000"),
+					    @HystrixProperty(name = "execution.isolation.thread.timeoutInMilliseconds", value = "5000"),
+					    @HystrixProperty(name = "circuitBreaker.errorThresholdPercentage", value = "10")
+					}
+			)
+	@GetMapping("/mowDlugo")
+	public String mowDlugo(){
+		return przykladowyKlientMS.mowDlugo();
+	}
+	
 	public String metodaFallback(){
 		return "To mowi metoda fallback";
 	}
