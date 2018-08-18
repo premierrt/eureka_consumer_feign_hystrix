@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixProperty;
 
 @RestController
 public class MowController {
@@ -16,7 +17,13 @@ public class MowController {
 		this.przykladowyKlientMS = przykladowyKlientMS;
 	}
 	
-	@HystrixCommand(fallbackMethod="metodaFallback")
+	@HystrixCommand(fallbackMethod="metodaFallback",
+			 commandProperties = {
+					    @HystrixProperty(name = "circuitBreaker.sleepWindowInMilliseconds", value = "20000"),
+					    @HystrixProperty(name = "execution.isolation.thread.timeoutInMilliseconds", value = "5000"),
+					    @HystrixProperty(name = "circuitBreaker.errorThresholdPercentage", value = "10")
+					}
+			)
 	@GetMapping("/mowcos")
 	public String mowCos(){
 		return przykladowyKlientMS.mow();

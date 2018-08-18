@@ -1,11 +1,14 @@
-konsumuje zarejstrowane w eurece boot_eureka_Client
+konsumuje zarejstrowane w eurece_server_boot1,  boot_eureka_Client klienta
+komunikuje się przez feign klienta i eureke. jesli boot_eureka_client ms nie jest dostępny to hysterix zwraca fallback.
 
 https://www.baeldung.com/spring-cloud-netflix-eureka
 https://www.baeldung.com/spring-cloud-netflix-hystrix
 
 
-to do hystrix:
++to do hystrix:
 https://codecouple.pl/2017/11/24/23-spring-boot-hystrix/
++hystrix dashboard
+https://www.baeldung.com/spring-cloud-netflix-hystrix
 
 
 dodac zuul:
