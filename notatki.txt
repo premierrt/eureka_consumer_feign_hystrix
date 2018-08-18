@@ -13,3 +13,6 @@ https://www.baeldung.com/spring-cloud-netflix-hystrix
 
 dodac zuul:
 https://www.baeldung.com/zuul-load-balancing
+
+-dodac ribon
+https://dzone.com/articles/microservices-tutorial-ribbon-as-a-load-balancer-1
