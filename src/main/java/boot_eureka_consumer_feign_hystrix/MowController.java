@@ -30,9 +30,8 @@ public class MowController {
 	
 	@HystrixCommand(fallbackMethod="metodaFallback",
 			 commandProperties = {
-					    @HystrixProperty(name = "circuitBreaker.sleepWindowInMilliseconds", value = "20000"),
-					    @HystrixProperty(name = "execution.isolation.thread.timeoutInMilliseconds", value = "5000"),
-					    @HystrixProperty(name = "circuitBreaker.errorThresholdPercentage", value = "10")
+					    @HystrixProperty(name = "hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds", value = "5000"),
+
 					}
 			)
 	@GetMapping("/mowDlugo")
